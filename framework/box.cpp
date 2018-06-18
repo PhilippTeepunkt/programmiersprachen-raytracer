@@ -1,8 +1,18 @@
 #include "box.hpp"
+#include "shape.hpp"
 #include <glm/vec3.hpp>
 #include <cmath>
+#include <string>
+#include "color.hpp"
 
 Box::Box(glm::vec3 const& min, glm::vec3 const& max):
+    Shape(),
+    min_{min},
+    max_{max}
+{};
+
+Box::Box(glm::vec3 const& min, glm::vec3 const& max, std::string const& name, Color const& color):
+    Shape(name,color),
     min_{min},
     max_{max}
 {};

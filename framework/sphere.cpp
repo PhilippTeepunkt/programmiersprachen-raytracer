@@ -1,8 +1,18 @@
 #include "sphere.hpp"
+#include "shape.hpp"
 #include <cmath>
 #include <glm/vec3.hpp>
+#include <string>
+#include "color.hpp"
 
 Sphere::Sphere(glm::vec3 const& mid,double const& rad):
+    Shape(),
+    rad_{rad},
+    mid_{mid}
+{};
+
+Sphere::Sphere(glm::vec3 const& mid, double const& rad,std::string const& name, Color const& color):
+    Shape(name,color),
     rad_{rad},
     mid_{mid}
 {};
