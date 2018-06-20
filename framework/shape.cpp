@@ -6,12 +6,21 @@
 Shape::Shape():
     name_{"noname"},
     color_{Color{0.0f,0.0f,0.0f}}
-{};
+{
+    std::cout<<"Base constructor called.\n";
+};
 
 Shape::Shape(std::string const& name,Color const& color):
     name_{name},
     color_{color}
-{};
+{
+    std::cout<<"Base constructor called.\n";
+};
+
+Shape::~Shape()
+{
+    std::cout<<"Base destructor called.\n";
+};
 
 std::string Shape::name()const
 {return name_;};

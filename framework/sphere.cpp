@@ -11,13 +11,22 @@ Sphere::Sphere(glm::vec3 const& mid,double const& rad):
     Shape{},
     rad_{rad},
     mid_{mid}
-{};
+{
+    std::cout<<"Child constructor called.\n";
+};
 
 Sphere::Sphere(glm::vec3 const& mid, double const& rad,std::string const& name, Color const& color):
     Shape{name,color},
     rad_{rad},
     mid_{mid}
-{};
+{
+    std::cout<<"Child constructor called.\n";
+};
+
+Sphere::~Sphere()
+{
+    std::cout<<"Child destructor called.\n";
+}
 
 //getter
 double Sphere::rad()const

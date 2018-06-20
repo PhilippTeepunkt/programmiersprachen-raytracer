@@ -13,6 +13,8 @@ class Sphere : public Shape
     public:
         Sphere(glm::vec3 const& mid, double const& rad);
         Sphere(glm::vec3 const& mid, double const& rad,std::string const& name, Color const& color);
+        ~Sphere();
+
         glm::vec3 mid()const;
         double rad()const;
         double area()const override;
