@@ -3,6 +3,7 @@
 #include <cmath>
 #include <string>
 #include "color.hpp"
+#include <iostream>
 
 Box::Box(glm::vec3 const& min, glm::vec3 const& max):
     Shape(),
@@ -46,11 +47,10 @@ double Box::volume()const
 
 std::ostream& Box::print(std::ostream& os)const
 {
-    os<<"Name: "<<name()<<",\n";
-    os<<"Color: "<<color()<<",\n";
+    Shape::print(os);
     os<<"Area: "<<area()<<"FE,\n";
     os<<"Volume: "<<volume()<<"VE, \n";
-    os<<"Minimum: ("<<min_.x<<","<<min_.y<<","<<min_.z<<",\n";
-    os<<"Maximum: ("<<max_.x<<","<<max_.y<<","<<max_.z<<",\n";
+    os<<"Minimum: ("<<min_.x<<","<<min_.y<<","<<min_.z<<"),\n";
+    os<<"Maximum: ("<<max_.x<<","<<max_.y<<","<<max_.z<<"),\n";
     return os;
 }

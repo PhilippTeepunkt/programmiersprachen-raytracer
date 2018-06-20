@@ -71,6 +71,7 @@ TEST_CASE("operator and print","[shapes]")
   std::cout<<b3<<"\n";
 }
 
+
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);

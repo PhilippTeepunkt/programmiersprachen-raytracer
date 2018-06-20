@@ -7,21 +7,13 @@
 class Shape
 {
     public:
-
-        Shape(std::string const& name,Color const& color):
-            name_{name},
-            color_{color}
-        {};
-
-        Shape():
-            name_{"noname"},
-            color_{Color{0.0f,0.0f,0.0f}}
-        {};
+        Shape();
+        Shape(std::string const& name,Color const& color);
 
         virtual double area()const = 0;
         virtual double volume()const = 0;
-        std::string name()const{return name_;};
-        Color color()const{return color_;};
+        std::string name()const;
+        Color color()const;
 
         virtual std::ostream& print(std::ostream& os)const;
 
@@ -30,9 +22,6 @@ class Shape
         Color color_;   
 };
 
-std::ostream& operator<<(std::ostream& os, Shape const& s)
-{
-    return s.print(os);
-}
+std::ostream& operator<<(std::ostream& os, Shape const& s);
 #endif
 

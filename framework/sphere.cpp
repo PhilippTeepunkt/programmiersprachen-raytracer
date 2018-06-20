@@ -3,15 +3,16 @@
 #include <glm/vec3.hpp>
 #include <string>
 #include "color.hpp"
+#include <iostream>
 
 Sphere::Sphere(glm::vec3 const& mid,double const& rad):
-    Shape(),
+    Shape{},
     rad_{rad},
     mid_{mid}
 {};
 
 Sphere::Sphere(glm::vec3 const& mid, double const& rad,std::string const& name, Color const& color):
-    Shape(name,color),
+    Shape{name,color},
     rad_{rad},
     mid_{mid}
 {};
@@ -40,11 +41,10 @@ double Sphere::volume()const
 
 std::ostream& Sphere::print(std::ostream& os)const
 {
-    os<<"Name: "<<name()<<",\n";
-    os<<"Color: "<<color()<<",\n";
+    Shape::print(os);
     os<<"Area: "<<area()<<"FE,\n";
     os<<"Volume: "<<volume()<<"VE, \n";
     os<<"Radius: "<<rad_<<",\n";
-    os<<"Center: ("<<mid_.x<<","<<mid_.y<<","<<mid_.z<<",\n";
+    os<<"Center: ("<<mid_.x<<","<<mid_.y<<","<<mid_.z<<"),\n";
     return os;
 }
