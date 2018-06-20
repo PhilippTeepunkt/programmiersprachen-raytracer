@@ -6,6 +6,7 @@
 #include <string>
 #include "color.hpp"
 #include <iostream>
+#include "Ray.hpp"
 
 class Sphere : public Shape
 {
@@ -18,6 +19,8 @@ class Sphere : public Shape
         double volume()const override;
 
         std::ostream& print(std::ostream& os)const override;
+
+        bool intersect(Ray const& ray,float& distance)const;
 
     private:
         glm::vec3 mid_;

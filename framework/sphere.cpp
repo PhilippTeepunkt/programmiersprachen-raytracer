@@ -4,6 +4,8 @@
 #include <string>
 #include "color.hpp"
 #include <iostream>
+#include "Ray.hpp"
+#include <glm/gtx/intersect.hpp>
 
 Sphere::Sphere(glm::vec3 const& mid,double const& rad):
     Shape{},
@@ -47,4 +49,9 @@ std::ostream& Sphere::print(std::ostream& os)const
     os<<"Radius: "<<rad_<<",\n";
     os<<"Center: ("<<mid_.x<<","<<mid_.y<<","<<mid_.z<<"),\n";
     return os;
+}
+
+bool Sphere::intersect(Ray const& ray,float& distance)const
+{
+    return glm::intersectRaySphere(ray.origin,ray.direction,mid_,rad_*rad_,distance);   
 }
