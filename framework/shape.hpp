@@ -2,6 +2,7 @@
 #define SHAPE_HPP
 #include <string>
 #include "color.hpp"
+#include <iostream>
 
 class Shape
 {
@@ -22,10 +23,16 @@ class Shape
         std::string name()const{return name_;};
         Color color()const{return color_;};
 
+        virtual std::ostream& print(std::ostream& os)const;
+
     private:
         std::string name_;
         Color color_;   
 };
 
+std::ostream& operator<<(std::ostream& os, Shape const& s)
+{
+    return s.print(os);
+}
 #endif
 

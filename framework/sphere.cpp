@@ -1,5 +1,4 @@
 #include "sphere.hpp"
-#include "shape.hpp"
 #include <cmath>
 #include <glm/vec3.hpp>
 #include <string>
@@ -37,4 +36,15 @@ double Sphere::area()const
 double Sphere::volume()const
 {
     return (4.0/3.0)*M_PI*pow(rad_,3);
+}
+
+std::ostream& Sphere::print(std::ostream& os)const
+{
+    os<<"Name: "<<name()<<",\n";
+    os<<"Color: "<<color()<<",\n";
+    os<<"Area: "<<area()<<"FE,\n";
+    os<<"Volume: "<<volume()<<"VE, \n";
+    os<<"Radius: "<<rad_<<",\n";
+    os<<"Center: ("<<mid_.x<<","<<mid_.y<<","<<mid_.z<<",\n";
+    return os;
 }

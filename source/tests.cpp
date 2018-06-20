@@ -57,6 +57,20 @@ TEST_CASE("general tests","[shapes]")
   }
 }
 
+TEST_CASE("operator and print","[shapes]")
+{
+  glm::vec3 mid3{0.0,0.0,0.0};
+  double radius3{3.5};
+  Sphere s3{mid3,radius3};
+
+  glm::vec3 min3{1.0,1.0,1.0};
+  glm::vec3 max3{-3.0,-3.0,-3.0};
+  Box b3{min3,max3};
+
+  std::cout<<s3<<"\n";
+  std::cout<<b3<<"\n";
+}
+
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);

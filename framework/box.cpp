@@ -1,5 +1,4 @@
 #include "box.hpp"
-#include "shape.hpp"
 #include <glm/vec3.hpp>
 #include <cmath>
 #include <string>
@@ -43,4 +42,15 @@ double Box::volume()const
     double width{abs(max_.y-min_.y)};
     double height{abs(max_.z-min_.z)};
     return length*width*height;
+}
+
+std::ostream& Box::print(std::ostream& os)const
+{
+    os<<"Name: "<<name()<<",\n";
+    os<<"Color: "<<color()<<",\n";
+    os<<"Area: "<<area()<<"FE,\n";
+    os<<"Volume: "<<volume()<<"VE, \n";
+    os<<"Minimum: ("<<min_.x<<","<<min_.y<<","<<min_.z<<",\n";
+    os<<"Maximum: ("<<max_.x<<","<<max_.y<<","<<max_.z<<",\n";
+    return os;
 }

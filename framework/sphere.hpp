@@ -5,6 +5,7 @@
 #include <glm/vec3.hpp>
 #include <string>
 #include "color.hpp"
+#include <iostream>
 
 class Sphere : public Shape
 {
@@ -15,6 +16,8 @@ class Sphere : public Shape
         double rad()const;
         double area()const override;
         double volume()const override;
+
+        std::ostream& print(std::ostream& os)const override;
 
     private:
         glm::vec3 mid_;
